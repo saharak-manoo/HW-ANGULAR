@@ -1,24 +1,10 @@
-# README
+# YELLOWPRINT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### environment variables (ENV)
+  We're using Figaro, so please create your own 'config/application.yml' by running
+```
+bundle exec figaro install
+```
+  you can see the required ENV in 'config/initializer/figaro.rb'
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  ps. please also check 'config/application.sample.yml'

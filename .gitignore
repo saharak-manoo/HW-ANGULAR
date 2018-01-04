@@ -16,9 +16,14 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+
+# Ignore database configuration
 /config/database.yml
 
 /node_modules
 /yarn-error.log
 
 .byebug_history
+
+# Ignore application configuration
+/config/application.yml
