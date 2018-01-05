@@ -16,6 +16,8 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 # Authentication solution for Rails based on Warden
 gem 'devise'
+# Authorization library for Ruby
+gem 'cancancan', '~> 2.0'
 # User roles library
 gem 'rolify'
 # Rails engine that provides an easy-to-use interface for managing app data.
