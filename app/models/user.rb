@@ -8,7 +8,7 @@ class User < ApplicationRecord
   after_create :assign_default_role
 
   ROLE_NORMAL = :normal
-  ROLE_SUPERADMIN = :superadmin
+  ROLE_SUPER_ADMIN = :superadmin
 
   def assign_default_role
     self.add_role(ROLE_NORMAL) if self.roles.blank?

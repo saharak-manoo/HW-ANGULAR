@@ -39,7 +39,22 @@ module FeatureHelper
   end
 end
 
+module RoleHelper
+  def create_super_admin
+    user = User.make!
+    user.add_role(User::ROLE_SUPER_ADMIN)
+    user
+  end
+
+  def create_normal_user
+    user = User.make!
+    user.add_role(User::ROLE_NORMAL)
+    user
+  end
+end
+
 RSpec.configure do |config|
   config.include AsyncHelper, type: :feature
   config.include FeatureHelper, type: :feature
+  config.include RoleHelper
 end
