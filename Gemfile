@@ -53,6 +53,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'poltergeist'
   gem 'rspec-retry'
+  gem 'database_cleaner'
 end
 
 group :development do
