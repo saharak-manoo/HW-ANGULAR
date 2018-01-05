@@ -14,6 +14,8 @@ gem 'figaro'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+# Authentication solution for Rails based on Warden
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

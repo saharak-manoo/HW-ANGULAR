@@ -1,7 +1,7 @@
 # YELLOWPRINT
 
-##### environment variables (ENV)
-  We're using Figaro, so please create your own 'config/application.yml' by running
+### environment variables (ENV)
+  We're using Figaro as a Rails app configuration, so please create your own 'config/application.yml' by running
 ```
 bundle exec figaro install
 ```
