@@ -18,6 +18,8 @@ gem 'puma', '~> 3.7'
 gem 'devise'
 # User roles library
 gem 'rolify'
+# Rails engine that provides an easy-to-use interface for managing app data.
+gem 'rails_admin', '~> 1.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
