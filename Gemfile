@@ -16,6 +16,8 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 # Authentication solution for Rails based on Warden
 gem 'devise'
+# User roles library
+gem 'rolify'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
