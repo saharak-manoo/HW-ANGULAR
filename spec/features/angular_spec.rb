@@ -9,11 +9,11 @@ describe 'angular', js: true do
   end
 
   it 'works!' do
-    expect(page).to have_content 'Hello Angular! Template'
+    expect(page).to have_content 'Greeting!'
   end
 
   it 'open first page' do
-    expect(page).to have_content 'First page'
+    expect(page).to have_content "Hello #{normal_user.email}"
   end
 
   it 'can go to second page' do

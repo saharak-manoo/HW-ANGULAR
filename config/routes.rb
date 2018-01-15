@@ -8,9 +8,7 @@ Rails.application.routes.draw do
     root to: 'home#index'
   end
 
-  namespace :home do
-    get :profile
-  end
+  resources :users, only: [:index]
 
   root to: redirect('/users/sign_in')
 end

@@ -10,8 +10,8 @@ export class FirstComponent {
   user = {};
 
   constructor(private userService: UserService) {
-    this.userService.getCurrentUser().subscribe(user => {
-      this.user = user;
+    this.userService.all().subscribe(users => {
+      this.user = users[0];
     });
   }
 }

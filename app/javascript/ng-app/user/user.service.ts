@@ -1,12 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { RailsService } from '../_base/rails.service';
 
-@Injectable()
-export class UserService {
-  constructor (private http: HttpClient) {}
-
-  getCurrentUser() {
-    return this.http.get('/home/profile');
-  }
+export class UserService extends RailsService {
+  resources = 'users';
 }
