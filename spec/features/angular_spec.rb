@@ -9,6 +9,6 @@ describe 'angular', js: true do
   end
 
   it 'works!' do
-    expect(page).to have_content 'Hello Angular!'
+    expect(page).to have_content 'Hello Angular! Template'
   end
 end
