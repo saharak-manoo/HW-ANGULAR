@@ -6,6 +6,7 @@ import { FirstComponent } from '../first/first.component';
 import { SecondComponent } from '../second/second.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 enableProdMode();
 
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { useHash: true }
@@ -33,4 +35,4 @@ const appRoutes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

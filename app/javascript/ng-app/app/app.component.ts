@@ -5,6 +5,4 @@ import templateString from './app.html';
   selector: 'app-root',
   template: templateString,
 })
-export class AppComponent {
-  name = 'Angular!';
-}
+export class AppComponent {}
