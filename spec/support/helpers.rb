@@ -41,13 +41,13 @@ end
 
 module RoleHelper
   def create_super_admin
-    user = User.make!
+    user = FactoryBot.create :user
     user.add_role(User::ROLE_SUPER_ADMIN)
     user
   end
 
   def create_normal_user
-    user = User.make!
+    user = FactoryBot.create :user
     user.add_role(User::ROLE_NORMAL)
     user
   end

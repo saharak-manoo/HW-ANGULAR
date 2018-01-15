@@ -1,7 +1,7 @@
 # Add configuration values here, as shown below.
 #
 # stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
-spec_js_retry: 3
+spec_js_retry: "3"
 rails_admin_path: admin
 #
 # production:
