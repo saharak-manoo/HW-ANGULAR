@@ -32,6 +32,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/router@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-5.2.0.tgz#0a43f1c6add592c9cb0b9846fc157fc5b23ee73d"
+  dependencies:
+    tslib "^1.7.1"
+
 "@rails/webpacker@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-3.2.0.tgz#e9e98a4da4a3e09441c71d2cbd66461659971055"

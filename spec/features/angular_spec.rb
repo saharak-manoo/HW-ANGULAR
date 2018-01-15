@@ -11,4 +11,13 @@ describe 'angular', js: true do
   it 'works!' do
     expect(page).to have_content 'Hello Angular! Template'
   end
+
+  it 'open first page' do
+    expect(page).to have_content 'First page'
+  end
+
+  it 'can go to second page' do
+    click_link 'Second'
+    expect(page).to have_content 'Seccond page'
+  end
 end

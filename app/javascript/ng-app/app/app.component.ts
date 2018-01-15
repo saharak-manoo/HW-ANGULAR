@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import templateString from './app.component.html';
+import templateString from './app.html';
 
 @Component({
   selector: 'app-root',
