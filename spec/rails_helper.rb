@@ -36,7 +36,6 @@ RSpec.configure do |config|
       MSG
     end
     DatabaseCleaner.clean_with(:truncation)
-    FactoryBot.find_definitions
   end
 
   config.before(:each) do
