@@ -64,7 +64,7 @@ RSpec.configure do |config|
 end
 
 Capybara.javascript_driver = :poltergeist
-options = { js_errors: false, timeout: 60, window_size: [1440, 900], phantomjs_logger: STDOUT }
+options = { js_errors: true, timeout: 60, window_size: [1440, 900], phantomjs_logger: STDOUT }
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, options)
 end
