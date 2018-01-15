@@ -1,1 +1,1 @@
-require('../ng-app')
+require('../../../ng-app')
