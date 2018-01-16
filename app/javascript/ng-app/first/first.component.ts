@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import templateString from './first';
+import templateString from './first.html';
 import { UserService } from '../user/user.service';
 
 @Component({

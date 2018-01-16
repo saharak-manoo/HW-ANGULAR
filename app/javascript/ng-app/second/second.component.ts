@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import templateString from './second';
+import templateString from './second.html';
 
 @Component({
   template: templateString,
