@@ -28,6 +28,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use webpacker to manage javascript package
 gem 'webpacker', '~> 3.0'
+# Soft delete
+gem 'paranoia', '~> 2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
