@@ -12,6 +12,7 @@ pipeline:
       - mobile_secret=nowmobileissecret
     commands:
       - cp -f config/database.drone.yml config/database.yml
+      - cp -f config/application.sample.yml config/application.yml
       - gem install bundler
       - bundle install --path=./bundler
       - yarn install

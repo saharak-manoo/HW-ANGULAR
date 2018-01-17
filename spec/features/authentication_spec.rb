@@ -17,19 +17,21 @@ describe 'authentication', js: true do
     expect(page).to have_button 'Log in'
   end
 
-  describe 'rails admin' do
-    it 'accessible by super admin only' do
-      visit rails_admin_path
-      sleep 1
+  if Figaro.env.rails_admin_path?
+    describe 'rails admin' do
+      it 'accessible by super admin only' do
+        visit rails_admin_path
+        sleep 1
 
-      expect(page).to have_content 'Home'
-      sign_out
+        expect(page).to have_content 'Home'
+        sign_out
 
-      sign_in super_admin
-      visit rails_admin_path
-      sleep 1
+        sign_in super_admin
+        visit rails_admin_path
+        sleep 1
 
-      expect(page).to have_content 'Site Administration'
+        expect(page).to have_content 'Site Administration'
+      end
     end
   end
 end
