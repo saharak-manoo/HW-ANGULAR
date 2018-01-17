@@ -8,8 +8,6 @@ pipeline:
       - /tmp/cache:/cache
   build:
     image: bananacoding/ruby-nodejs:2.5.0
-    environment:
-      - mobile_secret=nowmobileissecret
     commands:
       - cp -f config/database.drone.yml config/database.yml
       - cp -f config/application.sample.yml config/application.yml
@@ -51,4 +49,4 @@ services:
     environment:
       - POSTGRES_USER=tester
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=bananatesting_test
+      - POSTGRES_DB=test
