@@ -82,3 +82,7 @@ Following are required variables
 4. EMAIL_HOST
 5. EMAIL_USERNAME
 6. EMAIL_PASSWORD
+
+### Rails Admin
+
+You can enable rails admin by adding `rails_admin_path` variable into your application.yml file
