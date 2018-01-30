@@ -30,7 +30,7 @@ pipeline:
     commands:
       - /bin/bash deploy.drone.sh
     when:
-      branch: develop
+      branch: master
     secrets: [ HEROKU_API_KEY, HEROKU_LOGIN, HEROKU_GIT_URL ]
   notify:
     image: drillster/drone-email
