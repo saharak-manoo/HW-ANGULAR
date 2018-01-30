@@ -7,6 +7,7 @@ import { SecondComponent } from '../second/second.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 enableProdMode();
 
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxDatatableModule,
     RouterModule.forRoot(
       appRoutes,
       { useHash: true }

@@ -7,11 +7,14 @@ import { UserService } from '../user/user.service';
   providers: [ UserService ]
 })
 export class FirstComponent {
-  user = {};
+  usersColumns = [
+    { prop: 'email' },
+    { prop: 'role' }
+  ];
 
   constructor(private userService: UserService) {
     this.userService.all().subscribe(users => {
-      this.user = users[0];
+      this.users = users;
     });
   }
 }

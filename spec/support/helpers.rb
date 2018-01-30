@@ -40,14 +40,14 @@ module FeatureHelper
 end
 
 module RoleHelper
-  def create_super_admin
-    user = FactoryBot.create :user
+  def create_super_admin(options = {})
+    user = FactoryBot.create :user, options
     user.add_role(User::ROLE_SUPER_ADMIN)
     user
   end
 
-  def create_normal_user
-    user = FactoryBot.create :user
+  def create_normal_user(options = {})
+    user = FactoryBot.create :user, options
     user.add_role(User::ROLE_NORMAL)
     user
   end

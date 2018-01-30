@@ -76,6 +76,10 @@
   version "0.19.3"
   resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.19.3.tgz#1bca732fc27a18e7dc32243316d0dd890f90cf7a"
 
+"@swimlane/ngx-datatable@^11.1.7":
+  version "11.1.7"
+  resolved "https://registry.yarnpkg.com/@swimlane/ngx-datatable/-/ngx-datatable-11.1.7.tgz#d4ca01a3c0ee67071da214b739da198179a4d756"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
