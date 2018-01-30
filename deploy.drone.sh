@@ -35,7 +35,7 @@ EOF
 
 echo "Deploying site to Heroku"
 git checkout develop
-git push heroku develop:master
+git push -f heroku develop:master
 git remote remove heroku
 
 exit 0
