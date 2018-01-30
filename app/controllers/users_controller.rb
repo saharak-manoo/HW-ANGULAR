@@ -4,4 +4,8 @@ class UsersController < ApplicationController
   def index
     render json: @users
   end
+
+  def show
+    render json: @user
+  end
 end

@@ -10,4 +10,20 @@ export class RailsService {
   all() {
     return this.http.get('/' + this.resources);
   }
+
+  create(attrs) {
+    return this.http.post('/' + this.resources, attrs);
+  }
+
+  find(id) {
+    return this.http.get('/' + this.resources + '/' + id);
+  }
+
+  update(id, attrs) {
+    return this.http.put('/' + this.resources + '/' + id, attrs);
+  }
+
+  delete(id) {
+    return this.http.delete('/' + this.resources + '/' + id);
+  }
 }

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     root to: 'home#index'
   end
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   root to: redirect('/users/sign_in')
 end
