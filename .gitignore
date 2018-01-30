@@ -30,3 +30,8 @@
 /public/packs
 /public/packs-test
 /node_modules
+
+# OSX files
+*.DS_Store
+.AppleDouble
+.LSOverride
