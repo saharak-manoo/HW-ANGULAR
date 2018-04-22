@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show]
+  resources :my_datas, only: [:index, :update, :create]
 
   root to: redirect('/users/sign_in')
 end

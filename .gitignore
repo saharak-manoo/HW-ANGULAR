@@ -38,3 +38,5 @@
 *.DS_Store
 .AppleDouble
 .LSOverride
+
+config/database.yml

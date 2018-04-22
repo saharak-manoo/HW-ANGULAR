@@ -1,8 +1,92 @@
-<h1>Hello {{ user?.email }}</h1>
+<h2>1. Variable</h2>
+<h3>{{ editableText1 }}</h3>
+<input type="text" [(ngModel)]="editableText1">
 
+
+<h2>2. On Click</h2>
 <div>
-  <ngx-datatable
-    [rows]="users"
-    [columns]="usersColumns">
-  </ngx-datatable>
+  <table id="table-1">
+    <thead>
+      <tr>
+        <th>Zero One</th>
+        <th>Zero Two</th>
+        <th>Zero Three</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ a01 }}</td>
+        <td>{{ a02 }}</td>
+        <td>{{ a03 }}</td>
+      </tr>
+      <tr>
+        <td>{{ b01 }}</td>
+        <td>{{ b02 }}</td>
+        <td>{{ b03 }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="button1Click()">RANDOM!!!</button>
 </div>
+
+
+
+
+<h2>3. On Change</h2>
+<input type="text" (change)="input1Change($event.target.value)">
+
+<input type="checkbox" (change)="checkbox1Change($event.target.checked)">
+
+<h3>{{ select1 }}</h3>
+<select id="select-1" [(ngModel)]="select1" (change)="select1Change($event.target.value)">
+  <option value="01">01</option>
+  <option value="02">02</option>
+  <option value="03">03</option>
+  <option value="04">04</option>
+</select>
+
+
+
+
+
+<h2>4. If cause</h2>
+<input type="checkbox" [(ngModel)]="checkbox1"> If
+<div *ngIf="checkbox1"><h3>If true!!</h3></div>
+
+<div></div>
+
+<input type="checkbox" [(ngModel)]="checkbox2"> If Else
+<div *ngIf="checkbox2; else elseBlockId"><h3>If Condition!!</h3></div>
+<ng-template #elseBlockId><h3>Else Condition!!</h3></ng-template>
+
+
+<h2>5. For Loop</h2>
+<h3>One dimension for loop</h3>
+<div *ngFor="let text1 of text1s">
+  <div><b>{{ text1 }}</b></div>
+</div>
+
+<h3>Two dimension for loop</h3>
+<table id="table-2">
+  <thead>
+    <tr>
+      <th>Zero One</th>
+      <th>Zero Two</th>
+      <th>Zero Three</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let text2s of text2ss">
+      <td *ngFor="let text2 of text2s">
+        {{ text2 }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. Link</h2>
+<a [routerLink]="['/second']">NEXT1</a>
+<a routerLink="/second" routerLinkActive="active">NEXT2</a>
+
+<h3>Note:</h3>
+<div>Search keyword: Angular2 [ANYTEXT]</div>

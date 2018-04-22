@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { FormsModule } from '@angular/forms';
 
 enableProdMode();
 
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     NgxDatatableModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { useHash: true }

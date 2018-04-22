@@ -1,25 +1,60 @@
 import { Component } from '@angular/core';
 import templateString from './first.html';
-import { UserService } from '../user/user.service';
 
 @Component({
-  template: templateString,
-  providers: [ UserService ]
+  template: templateString
 })
 export class FirstComponent {
-  user: any;
-  users: any[];
-  usersColumns: any[] = [
-    { prop: 'email' },
-    { prop: 'role' }
-  ];
+  private editableText1: string;
 
-  constructor(private userService: UserService) {
-    this.userService.all().subscribe((users: any[]) => {
-      this.users = users;
-    });
-    this.userService.find(1).subscribe((user: object) => {
-      this.user = user;
-    });
+  private a01: number;
+  private a02: number;
+  private a03: number;
+  private b01: number;
+  private b02: number;
+  private b03: number;
+
+  private select1: string;
+
+  private text1s;
+  private text2ss;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.editableText1 = "Shoujo Shuumatsu Ryokou";
+
+    this.a01 = 1
+    this.a02 = 2
+    this.a03 = 3
+    this.b01 = 11
+    this.b02 = 12
+    this.b03 = 13
+
+    this.select1 = "02"
+
+    this.text1s = ["Banana", "Papaya", "Panama"]
+    this.text2ss = [["a01","a02","a03"],["b01","b02","b03"]]
+  }
+
+  button1Click() {
+    this.a01 = Math.random()*100;
+    this.a02 = Math.random()*100;
+    this.a03 = Math.random()*100;
+    this.b01 = Math.random()*100;
+    this.b02 = Math.random()*100;
+    this.b03 = Math.random()*100;
+  }
+
+  select1Change(value) {
+    alert(value)
+  }
+
+  input1Change(value) {
+    alert(value)
+  }
+
+  checkbox1Change(value) {
+    alert(value)
   }
 }
