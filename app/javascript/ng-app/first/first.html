@@ -2,6 +2,9 @@
 <h3>{{ editableText1 }}</h3>
 <input type="text" [(ngModel)]="editableText1">
 
+<h3>ใส่ชื่อ : {{ editableText2 }}</h3>
+<input type="text" [(ngModel)]="editableText2">
+
 
 <h2>2. On Click</h2>
 <div>
@@ -27,6 +30,32 @@
     </tbody>
   </table>
   <button (click)="button1Click()">RANDOM!!!</button>
+</div>
+
+<h2>2. On ClickTest</h2>
+<div>
+  <table id="table-1">
+    <thead>
+      <tr>
+        <th>Zero One</th>
+        <th>Zero Two</th>
+        <th>Zero Three</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ c01 }}</td>
+        <td>{{ c02 }}</td>
+        <td>{{ c03 }}</td>
+      </tr>
+      <tr>
+        <td>{{ d01 }}</td>
+        <td>{{ d02 }}</td>
+        <td>{{ d03 }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div (click)="button1ClickTest()">กดสิ</div>
 </div>
 
 

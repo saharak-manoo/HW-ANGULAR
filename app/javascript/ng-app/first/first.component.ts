@@ -14,6 +14,13 @@ export class FirstComponent {
   private b02: number;
   private b03: number;
 
+  private c01
+  private c02
+  private c03
+  private d01
+  private d02
+  private d03
+
   private select1: string;
 
   private text1s;
@@ -31,6 +38,13 @@ export class FirstComponent {
     this.b02 = 12
     this.b03 = 13
 
+    this.c01 = 1
+    this.c02 = 2
+    this.c03 = "sdnf"
+    this.d01 = 4
+    this.d02 = 6
+    this.d03 = 7
+
     this.select1 = "02"
 
     this.text1s = ["Banana", "Papaya", "Panama"]
@@ -45,6 +59,16 @@ export class FirstComponent {
     this.b02 = Math.random()*100;
     this.b03 = Math.random()*100;
   }
+
+  button1ClickTest() {
+    this.c01 = "dove"
+    this.c02 = "efdssd";
+    this.c03 = "dsfkhdsfkshdf";
+    this.d01 = "sdlfj;djfl;dsj";
+    this.d02 = "sdkflsf";
+    this.d03 = "sdlfjsfl;sdc";
+  }
+
 
   select1Change(value) {
     alert(value)
