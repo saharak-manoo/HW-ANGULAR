@@ -1,0 +1,50 @@
+<h1>List MyUsers</h1>
+<table id="my-datas-table">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>AGE</th>
+      <th>EDIT</th>
+      <th>DELECT</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+
+
+
+    <!-- All & Update -->
+    <tr *ngFor="let myHomework of myHomeworks">
+      <td><input type="text" [(ngModel)]="myHomework.string_test"></td>
+      <td><input type="number" [(ngModel)]="myHomework.integer_test"></td>
+      <td><input type="checkbox" [(ngModel)]="myHomework.boolean_test">boolean_test</td>
+      <td>
+        <button (click)="update(myHomework.id, myHomework.string_test, myHomework.integer_test, myHomework.boolean_test)">
+          Update
+        </button>
+      </td>
+    </tr>
+
+
+
+
+    <!-- Create -->
+    <tr>
+      <td><input type="text" [(ngModel)]="newMyHomework.name"></td>
+      <td><input type="text" [(ngModel)]="newMyHomework.sex"></td>
+      <td><input type="number" [(ngModel)]="newMyHomework.age"></td>
+      <td><input type="text" [(ngModel)]="newMyHomework.address"></td>
+      <td><input type="text" [(ngModel)]="newMyHomework.skill"></td>
+      <td><input type="text" [(ngModel)]="newMyHomework.likecode"></td>
+      <td><input type="checkbox" [(ngModel)]="newMyHomework.dead">Dead ?</td>
+      <td>
+        <button (click)="create(newMyHomework)">
+          Create
+        </button>
+      </td>
+    </tr>
+
+
+
+  </tbody>
+</table>

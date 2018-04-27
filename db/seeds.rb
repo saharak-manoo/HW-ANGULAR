@@ -11,3 +11,5 @@ MyData.create(string_test: "Eve", integer_test: 0, boolean_test: true)
 MyData.create(string_test: "Naomi", integer_test: 703, boolean_test: true)
 MyData.create(string_test: "Ichigo", integer_test: 15, boolean_test: true)
 MyData.create(string_test: "Nanami", integer_test: 73, boolean_test: false)
+
+MyHomework.create(name: "Nanami",sex: "Male",age: 20,address:"14/2",skill:"Java",likecode:"yes",dead: false)

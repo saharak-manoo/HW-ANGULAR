@@ -4,6 +4,7 @@ import { enableProdMode } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FirstComponent } from '../first/first.component';
 import { SecondComponent } from '../second/second.component';
+import { HomeworkComponent } from '../homework/homework.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,14 +16,16 @@ enableProdMode();
 const appRoutes: Routes = [
   { path: '', component: FirstComponent },
   { path: 'first', component: FirstComponent },
-  { path: 'second', component: SecondComponent }
+  { path: 'second', component: SecondComponent },
+  { path: 'homework', component: HomeworkComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    HomeworkComponent
   ],
   imports: [
     BrowserModule,
