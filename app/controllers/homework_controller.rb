@@ -1,4 +1,4 @@
-class MyHomeworkController < ApplicationController
+class MyHomeworksController < ApplicationController
     load_and_authorize_resource
     skip_before_action :verify_authenticity_token
   
@@ -21,16 +21,16 @@ class MyHomeworkController < ApplicationController
       render json: MyHomework.all
     end
   
-    #GET /my_data_home_works
+    #GET /my_homes
     def index
-        my_data_home_works = MyHomework.all
-      render json: my_data_home_works
+      my_homes = MyHomework.all
+      render json: my_homes
     end
   
     private
   
     def create_params
-      params.require(:my_data_home_work).permit(:name, :email,:sex,:age,:address,:skill,:likecode,:dead)
+      params.require(:my_home).permit(:name, :email,:sex,:age,:address,:skill,:likecode,:dead)
     end
   end
   

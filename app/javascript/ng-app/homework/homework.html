@@ -14,12 +14,16 @@
 
 
     <!-- All & Update -->
-    <tr *ngFor="let myHomework of myHomeworks">
-      <td><input type="text" [(ngModel)]="myHomework.string_test"></td>
-      <td><input type="number" [(ngModel)]="myHomework.integer_test"></td>
-      <td><input type="checkbox" [(ngModel)]="myHomework.boolean_test">boolean_test</td>
+    <tr *ngFor="let myHome of myHomes">
+      <td><input type="text" [(ngModel)]="myHome.name"></td>
+      <td><input type="text" [(ngModel)]="myHome.sex"></td>
+      <td><input type="number" [(ngModel)]="myHome.age"></td>
+      <td><input type="text" [(ngModel)]="myHome.address"></td>
+      <td><input type="text" [(ngModel)]="myHome.skill"></td>
+      <td><input type="text" [(ngModel)]="myHome.likecode"></td>
+      <td><input type="checkbox" [(ngModel)]="myHome.dead">Dead ?</td>
       <td>
-        <button (click)="update(myHomework.id, myHomework.string_test, myHomework.integer_test, myHomework.boolean_test)">
+        <button (click)="update(myHomework.id, myHomework.name, myHomework.integer_test, myHomework.boolean_test)">
           Update
         </button>
       </td>
@@ -30,15 +34,15 @@
 
     <!-- Create -->
     <tr>
-      <td><input type="text" [(ngModel)]="newMyHomework.name"></td>
-      <td><input type="text" [(ngModel)]="newMyHomework.sex"></td>
-      <td><input type="number" [(ngModel)]="newMyHomework.age"></td>
-      <td><input type="text" [(ngModel)]="newMyHomework.address"></td>
-      <td><input type="text" [(ngModel)]="newMyHomework.skill"></td>
-      <td><input type="text" [(ngModel)]="newMyHomework.likecode"></td>
-      <td><input type="checkbox" [(ngModel)]="newMyHomework.dead">Dead ?</td>
+      <td><input type="text" [(ngModel)]="newMyHome.name"></td>
+      <td><input type="text" [(ngModel)]="newMyHome.sex"></td>
+      <td><input type="number" [(ngModel)]="newMyHome.age"></td>
+      <td><input type="text" [(ngModel)]="newMyHome.address"></td>
+      <td><input type="text" [(ngModel)]="newMyHome.skill"></td>
+      <td><input type="text" [(ngModel)]="newMyHome.likecode"></td>
+      <td><input type="checkbox" [(ngModel)]="newMyHome.dead">Dead ?</td>
       <td>
-        <button (click)="create(newMyHomework)">
+        <button (click)="create(newMyHome)">
           Create
         </button>
       </td>

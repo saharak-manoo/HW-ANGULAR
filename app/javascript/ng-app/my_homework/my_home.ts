@@ -1,4 +1,4 @@
-export class MyHomework {
+export class MyHome {
   id: number;
   name: string;
   sex: string;
@@ -14,7 +14,7 @@ export class MyHomework {
 
   getCreateParam() {
     return {
-      my_data_home_work: {
+      my_home: {
         name: this.name,
         sex: this. sex,
         age: this.age,

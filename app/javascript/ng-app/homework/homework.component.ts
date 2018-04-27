@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
 import templateString from './homework.html';
-import { MyHomeworkService } from '../my_homework/myHomework.service';
-import { MyHomework } from '../my_homework/myhomework';
+import { MyHomeworkService } from '../my_homework/my_home.service';
+import { MyHome } from '../my_homework/my_home';
 
 @Component({
   template: templateString,
   providers: [ MyHomeworkService ]
 })
 export class HomeworkComponent {
-  private myHomeworks: any;
+  private myHomes: any;
   private attrs: any
-  private newMyHomework: MyHomework;
+  private newMyHome: MyHome;
 
   constructor(private myHomeworkService: MyHomeworkService) { }
 
   ngOnInit() {
     this.getAll();
-    this.newMyHomework = new MyHomework();
+    this.newMyHome = new MyHome();
   }
 
   getAll() {
     this.myHomeworkService.all().subscribe(resp => {
       console.log(resp);
-      this.myHomeworks = resp;
+      this.myHomes = resp;
     }, e => {
       console.log(e);
     })
@@ -41,18 +41,18 @@ export class HomeworkComponent {
     }
     this.myHomeworkService.update(id, this.attrs).subscribe(resp => {
       console.log(resp);
-      this.myHomeworks = resp;
+      this.myHomes = resp;
     }, e => {
       console.log(e);
     })
   }
 
-  create(newMyHomework) {
-    console.log(newMyHomework.getCreateParam())
-    this.myHomeworkService.create(newMyHomework.getCreateParam()).subscribe(resp => {
+  create(newMyHome) {
+    console.log(newMyHome.getCreateParam())
+    this.myHomeworkService.create(newMyHome.getCreateParam()).subscribe(resp => {
       console.log(resp);
-      this.myHomeworks = resp;
-      this.newMyHomework = new MyHomework();
+      this.myHomes = resp;
+      this.newMyHome = new MyHome();
     }, e => {
       console.log(e);
     })
