@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :my_datas, only: [:index, :update, :create]
-  resources :my_homes
+  resources :my_homes, only: [:index, :update, :create]
 
   root to: redirect('/users/sign_in')
 end

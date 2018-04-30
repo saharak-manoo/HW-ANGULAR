@@ -4,13 +4,13 @@ class MyHomesController < ApplicationController
   
    
     def update
-        MyHome.find(params[:id]).update(
+      MyHome.find(params[:id]).update(
             name: params[:name],
             sex: params[:sex],
             age: params[:age],
             address: params[:address],
             skill: params[:skill],
-            likecode: params[:likecode]
+            likecode: params[:likecode],
             dead: params[:dead]
       )
       render json: MyHome.all
@@ -30,7 +30,7 @@ class MyHomesController < ApplicationController
     private
   
     def create_params
-      params.require(:my_home).permit(:name, :email,:sex,:age,:address,:skill,:likecode,:dead)
+      params.require(:my_home).permit(:name,:sex,:age,:address,:skill,:likecode,:dead)
     end
   end
   

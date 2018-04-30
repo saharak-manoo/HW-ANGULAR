@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import templateString from './homework.html';
-import { MyHomeworkService } from '../my_homework/my_home.service';
+import { MyHomeService } from '../my_homework/my_home.service';
 import { MyHome } from '../my_homework/my_home';
 
 @Component({
   template: templateString,
-  providers: [ MyHomeworkService ]
+  providers: [ MyHomeService ]
 })
 export class HomeworkComponent {
   private myHomes: any;
   private attrs: any
   private newMyHome: MyHome;
 
-  constructor(private myHomeworkService: MyHomeworkService) { }
+  constructor(private myHomeService: MyHomeService) { }
 
   ngOnInit() {
     this.getAll();
@@ -20,7 +20,7 @@ export class HomeworkComponent {
   }
 
   getAll() {
-    this.myHomeworkService.all().subscribe(resp => {
+    this.myHomeService.all().subscribe(resp => {
       console.log(resp);
       this.myHomes = resp;
     }, e => {
@@ -39,7 +39,7 @@ export class HomeworkComponent {
       dead: dead
 
     }
-    this.myHomeworkService.update(id, this.attrs).subscribe(resp => {
+    this.myHomeService.update(id, this.attrs).subscribe(resp => {
       console.log(resp);
       this.myHomes = resp;
     }, e => {
@@ -49,7 +49,7 @@ export class HomeworkComponent {
 
   create(newMyHome) {
     console.log(newMyHome.getCreateParam())
-    this.myHomeworkService.create(newMyHome.getCreateParam()).subscribe(resp => {
+    this.myHomeService.create(newMyHome.getCreateParam()).subscribe(resp => {
       console.log(resp);
       this.myHomes = resp;
       this.newMyHome = new MyHome();
