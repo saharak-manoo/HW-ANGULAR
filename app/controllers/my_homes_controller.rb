@@ -2,7 +2,7 @@ class MyHomesController < ApplicationController
     load_and_authorize_resource
     skip_before_action :verify_authenticity_token
   
-   def destroy
+    def destroy
         MyHome.find(params[:id]).destroy
         render json: MyHome.all
     end
@@ -29,7 +29,11 @@ class MyHomesController < ApplicationController
       my_homes = MyHome.all
       render json: my_homes
     end
-  
+    def show
+       MyHome.find(params[:id])
+        render json: MyHome.all
+    end  
+
     private
   
     def create_params
