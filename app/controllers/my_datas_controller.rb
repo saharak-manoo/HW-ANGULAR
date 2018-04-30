@@ -3,6 +3,11 @@ class MyDatasController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # PATCH /my_datas/:id
+  def destroy
+        MyData.find(params[:id]).destroy
+        render json: MyData.all
+    end
+
   def update
     MyData.find(params[:id]).update(
       string_test: params[:string_test],

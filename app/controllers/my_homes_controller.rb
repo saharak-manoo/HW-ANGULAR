@@ -2,7 +2,10 @@ class MyHomesController < ApplicationController
     load_and_authorize_resource
     skip_before_action :verify_authenticity_token
   
-   
+   def destroy
+        MyHome.find(params[:id]).destroy
+        render json: MyHome.all
+    end
     def update
       MyHome.find(params[:id]).update(
             name: params[:name],

@@ -67,4 +67,13 @@ export class HomeworkComponent {
     })
   }
 
+  find(id) {
+    this.myHomeService.find(id).subscribe(resp => {
+      console.log(resp);
+      this.myHomes = resp;
+    }, e => {
+      console.log(e);
+    })
+  }
+
 }
