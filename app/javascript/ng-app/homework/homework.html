@@ -1,54 +1,48 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
   crossorigin="anonymous">
-<h1>List MyUsers</h1>
-<table id="my-datas-table">
+
+<div class="container">
+<h1>MyUsers</h1>
+<table class="table table-dark table-hover">
   <thead>
     <tr>
-      <th>NAME</th>
-      <th>AGE</th>
-      <th>EDIT</th>
-      <th>DELECT</th>
-    
+      <th>Name</th>
+      <th>Age</th>
+      <th>Show</th>
+      <th>Create</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
-
-
-
-    <!-- All & Update -->
     <tr *ngFor="let myHome of myHomes">
-      <td><input type="text" [(ngModel)]="myHome.name"></td>
-      <td><input type="text" [(ngModel)]="myHome.sex"></td>
-      <td><input type="number" [(ngModel)]="myHome.age"></td>
-      <td><input type="text" [(ngModel)]="myHome.address"></td>
-      <td><input type="text" [(ngModel)]="myHome.skill"></td>
-      <td><input type="text" [(ngModel)]="myHome.likecode"></td>
-      <td><input type="checkbox" [(ngModel)]="myHome.dead">Dead ?</td>
       <td>
-        <button (click)="update(myHomew.id, myHome.name, myHome.integer_test, myHome.boolean_test)">
-          Update
-        </button>
+        {{myHome.name}}
       </td>
+      <td>
+        {{myHome.age}}
+      </td>
+      <td>
+        <button type="button" class="btn btn-primary">Show</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-success  ">Create</button>
+      </td>
+      <td>
+       <button type="button" class="btn btn-info">Edit</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </td>
+     
     </tr>
 
+  </tbody>
+</table>
+</div>
 
 
 
-    <!-- Create -->
-    <tr>
-      <td><input type="text" [(ngModel)]="newMyHome.name"></td>
-      <td><input type="text" [(ngModel)]="newMyHome.sex"></td>
-      <td><input type="number" [(ngModel)]="newMyHome.age"></td>
-      <td><input type="text" [(ngModel)]="newMyHome.address"></td>
-      <td><input type="text" [(ngModel)]="newMyHome.skill"></td>
-      <td><input type="text" [(ngModel)]="newMyHome.likecode"></td>
-      <td><input type="checkbox" [(ngModel)]="newMyHome.dead">Dead ?</td>
-      <td>
-        <button (click)="create(newMyHome)">
-          Create
-        </button>
-      </td>
-    </tr>
 
 
 
