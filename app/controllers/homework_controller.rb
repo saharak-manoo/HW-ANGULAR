@@ -1,10 +1,10 @@
-class MyHomeworksController < ApplicationController
+class MyHomesController < ApplicationController
     load_and_authorize_resource
     skip_before_action :verify_authenticity_token
   
    
     def update
-        MyHomework.find(params[:id]).update(
+        MyHome.find(params[:id]).update(
             name: params[:name],
             sex: params[:sex],
             age: params[:age],
@@ -13,17 +13,17 @@ class MyHomeworksController < ApplicationController
             likecode: params[:likecode]
             dead: params[:dead]
       )
-      render json: MyHomework.all
+      render json: MyHome.all
     end
 
     def create
-        MyHomework.create(create_params)
-      render json: MyHomework.all
+        MyHome.create(create_params)
+      render json: MyHome.all
     end
   
     #GET /my_homes
     def index
-      my_homes = MyHomework.all
+      my_homes = MyHome.all
       render json: my_homes
     end
   

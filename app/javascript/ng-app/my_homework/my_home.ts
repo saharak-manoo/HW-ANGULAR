@@ -22,7 +22,6 @@ export class MyHome {
         skill: this. skill,
         likecode: this.likecode,
         dead: this.dead
-        
       }
     }
   }

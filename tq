@@ -1,0 +1,10 @@
+                                 Table "public.my_datas"
+    Column    |       Type        |                       Modifiers                       
+--------------+-------------------+-------------------------------------------------------
+ id           | bigint            | not null default nextval('my_datas_id_seq'::regclass)
+ string_test  | character varying | 
+ integer_test | integer           | 
+ boolean_test | boolean           | 
+Indexes:
+    "my_datas_pkey" PRIMARY KEY, btree (id)
+

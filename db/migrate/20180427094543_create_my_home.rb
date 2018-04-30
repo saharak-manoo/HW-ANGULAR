@@ -8,7 +8,6 @@ class CreateMyHome < ActiveRecord::Migration[5.1]
       t.string :skill
       t.string  :likecode
       t.boolean :dead
-
     end
   end
 end
