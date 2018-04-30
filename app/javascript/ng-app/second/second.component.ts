@@ -27,7 +27,14 @@ export class SecondComponent {
       console.log(e);
     })
   }
-
+  delete(id) {
+    this.myDataService.delete(id).subscribe(resp => {
+      console.log(resp);
+      this.myDatas = resp;
+    }, e => {
+      console.log(e);
+    })
+  }
   update(id, string_test, integer_test, boolean_test) {
     this.attrs = {
       string_test: string_test,
@@ -52,5 +59,6 @@ export class SecondComponent {
       console.log(e);
     })
   }
+
 
 }

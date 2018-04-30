@@ -58,4 +58,13 @@ export class HomeworkComponent {
     })
   }
 
+  delete(id) {
+    this.myHomeService.delete(id).subscribe(resp => {
+      console.log(resp);
+      this.myHomes = resp;
+    }, e => {
+      console.log(e);
+    })
+  }
+
 }

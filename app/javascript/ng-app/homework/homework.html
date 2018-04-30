@@ -3,19 +3,30 @@
 
 <div class="container">
 <h1>MyUsers</h1>
+<br>
+<br>  
+
+<a routerLink="/create" routerLinkActive="active">
+    <button type="button" class="btn btn-success">Create</button>
+</a>
+
+<br><br><br>
 <table class="table table-dark table-hover">
   <thead>
     <tr>
+      <th>NO</th>
       <th>Name</th>
       <th>Age</th>
       <th>Show</th>
-      <th>Create</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let myHome of myHomes">
+      <td>
+        {{myHome.id}}
+      </td>
       <td>
         {{myHome.name}}
       </td>
@@ -26,13 +37,10 @@
         <button type="button" class="btn btn-primary">Show</button>
       </td>
       <td>
-        <button type="button" class="btn btn-success  ">Create</button>
+       <button type="button" class="btn btn-warning">Edit</button>
       </td>
       <td>
-       <button type="button" class="btn btn-info">Edit</button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="delete(myHome.id)">Delete</button>
       </td>
      
     </tr>
@@ -40,11 +48,6 @@
   </tbody>
 </table>
 </div>
-
-
-
-
-
 
   </tbody>
 </table>
