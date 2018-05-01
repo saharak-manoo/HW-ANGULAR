@@ -29,9 +29,10 @@ class MyHomesController < ApplicationController
       my_homes = MyHome.all
       render json: my_homes
     end
+    
     def show
        MyHome.find(params[:id])
-        render json: MyHome.all
+      render json: MyHome.all
     end  
 
     private
