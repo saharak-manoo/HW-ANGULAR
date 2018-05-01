@@ -28,35 +28,35 @@ export class HomeworkComponent {
     })
   }
 
-  update(id, name, sex, age, address, skill, likecode, dead) {
-    this.attrs = {
-      name: name,
-      sex: sex,
-      age: age,
-      address: address,
-      skill: skill,
-      likecode: likecode,
-      dead: dead
+  // update(id, name, sex, age, address, skill, likecode, dead) {
+  //   this.attrs = {
+  //     name: name,
+  //     sex: sex,
+  //     age: age,
+  //     address: address,
+  //     skill: skill,
+  //     likecode: likecode,
+  //     dead: dead
 
-    }
-    this.myHomeService.update(id, this.attrs).subscribe(resp => {
-      console.log(resp);
-      this.myHomes = resp;
-    }, e => {
-      console.log(e);
-    })
-  }
+  //   }
+  //   this.myHomeService.update(id, this.attrs).subscribe(resp => {
+  //     console.log(resp);
+  //     this.myHomes = resp;
+  //   }, e => {
+  //     console.log(e);
+  //   })
+  // }
 
-  create(newMyHome) {
-    console.log(newMyHome.getCreateParam())
-    this.myHomeService.create(newMyHome.getCreateParam()).subscribe(resp => {
-      console.log(resp);
-      this.myHomes = resp;
-      this.newMyHome = new MyHome();
-    }, e => {
-      console.log(e);
-    })
-  }
+  // create(newMyHome) {
+  //   console.log(newMyHome.getCreateParam())
+  //   this.myHomeService.create(newMyHome.getCreateParam()).subscribe(resp => {
+  //     console.log(resp);
+  //     this.myHomes = resp;
+  //     this.newMyHome = new MyHome();
+  //   }, e => {
+  //     console.log(e);
+  //   })
+  // }
 
   delete(id) {
     this.myHomeService.delete(id).subscribe(resp => {

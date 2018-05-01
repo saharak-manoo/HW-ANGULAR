@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from '../first/first.component';
 import { SecondComponent } from '../second/second.component';
 import { HomeworkComponent } from '../homework/homework.component';
+import { CreateComponent } from '../homework/create.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
   { path: '', component: FirstComponent },
   { path: 'first', component: FirstComponent },
   { path: 'second', component: SecondComponent },
-  { path: 'homework', component: HomeworkComponent }
+  { path: 'homework', component: HomeworkComponent },
+  { path: 'create', component: CreateComponent }
 ];
 
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     FirstComponent,
     SecondComponent,
-    HomeworkComponent
+    HomeworkComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
