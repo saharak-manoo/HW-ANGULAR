@@ -28,29 +28,29 @@
             </div>
             <div class="form-group">
                 <label for="inputlg">Address</label>
-                <input class="form-control input-lg" id="inputlg" type="text">
+                <input class="form-control input-lg" [(ngModel)]="newMyHome.address" type="text">
             </div>
             <div class="form-group">
                 <label for="inputlg">Skill</label>
-                <input class="form-control input-lg" id="inputlg" type="text">
+                <input class="form-control input-lg" [(ngModel)]="newMyHome.skill" type="text">
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="optradio">Option 1</label>
+                    <input type="radio" [(ngModel)]="newMyHome.likecode" value="Yes I like Code">Yes I like Code</label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="optradio">Option 2</label>
+                    <input type="radio" [(ngModel)]="newMyHome.likecode" value="No">No</label>
             </div>
             <div class="radio disabled">
                 <label>
-                    <input type="radio" name="optradio" disabled>Option 3</label>
+                    <input type="radio" [(ngModel)]="newMyHome.likecode" value="Yes No">Yes NO</label>
             </div>
 
             <div class="form-group">
                 <label for="inputlg">Dead ? </label>
                 <br>
-                <input type="checkbox" class="form-check-input" value="">
+                <input type="checkbox" class="form-check-input lg" value="ture" [(ngModel)]="newMyHome.dead">
             </div>
 
 
@@ -58,7 +58,9 @@
 <br><br><br>
 
             <div class="form-group">
-                <button type="button" class="btn btn-success" (click)="create(newMyHome)">Success</button>
+                <a routerLink="/homework" routerLinkActive="active">
+                <button type="button" class="btn btn-success" (click)="create(newMyHome)" >Success</button>
+                </a>
                 <button type="button" class="btn btn-warning">Warning</button>
             </div>
 
