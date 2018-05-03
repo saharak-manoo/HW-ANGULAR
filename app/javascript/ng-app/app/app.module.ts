@@ -21,7 +21,7 @@ const appRoutes: Routes = [
   { path: 'second', component: SecondComponent },
   { path: 'homework', component: HomeworkComponent },
   { path: 'create', component: CreateComponent },
-  { path: 'show', component: ShowComponent }
+  { path: 'show/:id', component: ShowComponent }
 ];
 
 @NgModule({

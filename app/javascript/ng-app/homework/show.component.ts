@@ -14,10 +14,12 @@ export class ShowComponent {
 
     constructor(private myHomeService: MyHomeService) { }
 
-    ngOnInit() {
+    ngOnInit(id) {
         this.getAll();
         this.newMyHome = new MyHome();
     }
+
+    
 
     getAll() {
         this.myHomeService.all().subscribe(resp => {

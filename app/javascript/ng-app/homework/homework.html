@@ -23,7 +23,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let myHome of myHomes">
+    <tr *ngFor="let myHome of myHomes" [routerLink]="['/show', myHome.id]">
       <td>
         {{myHome.id}}
       </td>
@@ -35,7 +35,7 @@
       </td>
       <td>
         <a routerLink="/show" routerLinkActive="active">
-        <button type="button" class="btn btn-primary" (click)="find(myHome.id)">Show</button>
+        <button type="button" class="btn btn-primary" (click)="find(myHome.id)" >Show</button>
         </a>
       </td>
       <td>
@@ -50,6 +50,11 @@
   </tbody>
 </table>
 </div>
+
+
+<a *ngFor="let myHome of myHomes" [routerLink]="['/show', myHome.id]"> {{ myHome.name }}
+</a>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous"></script>

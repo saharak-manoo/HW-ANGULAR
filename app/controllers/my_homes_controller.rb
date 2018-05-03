@@ -31,7 +31,7 @@ class MyHomesController < ApplicationController
     end
     
     def show
-       MyHome.find(params[:id]).show()
+      MyHome.find(params[:id])
       render json: MyHome.all
     end  
 
