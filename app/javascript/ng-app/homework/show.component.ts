@@ -8,17 +8,30 @@ import { ActivatedRoute } from '@angular/router';
   template: templateString,
   providers: [MyHomeService]
 })
+
 export class ShowComponent {
   private myHomes: any;
   private attrs: any;
   private newMyHome: MyHome;
   private ages;
+  private id;
 
-  constructor(private myHomeService: MyHomeService) { }
+  constructor(private route: ActivatedRoute, private myHomeService: MyHomeService) { }
 
   ngOnInit() {
-    this.find(window.location.href.split('/')[5]);
-    this.ages = [10, 11, 12, 13, 14, 15, 16]
+    this.route.paramMap.subscribe((params: ParamsMaps) => {
+      this.id = params.get('id');
+    });
+    this.find(this.id);
+    this.ages = Array.from(new Array(100),(val, index) => index + 1);
+  }
+
+  getAll() {
+    this.myHomeService.all().subscribe(resp => {
+      this.myHomes = resp;
+    }, e => {
+      console.log(e);
+    })
   }
 
   find(id) {
@@ -43,7 +56,7 @@ export class ShowComponent {
     this.myHomeService.update(my_homes.id, this.attrs).subscribe(resp => {
       this.myHomes = resp;
     }, e => {
-      console.log(e);
+      this.getAll()
     })
   }
 }

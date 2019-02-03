@@ -11,10 +11,12 @@ export class CreateComponent {
 	private myHomes: any;
 	private attrs: any
 	private newMyHome: MyHome;
+	private ages;
 
 	constructor(private myHomeService: MyHomeService) { }
 
 	ngOnInit() {
+		this.ages = Array.from(new Array(100),(val, index) => index + 1);
 		this.newMyHome = new MyHome();
 	}
 

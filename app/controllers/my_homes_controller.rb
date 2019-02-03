@@ -5,6 +5,11 @@ class MyHomesController < ApplicationController
   #GET /my_homes
   def index
     my_homes = MyHome.order(id: :desc)
+
+    # search
+    if params[:search].present?
+      my_homes = my_homes.where("name LIKE :search OR sex LIKE :search OR address LIKE :search", search: "%#{params[:search]}%")
+    end
     render json: my_homes
   end
 
@@ -15,18 +20,18 @@ class MyHomesController < ApplicationController
 
   def create
     MyHome.create(my_home_params)
-    redirect_to my_homes_path
+    redirect_to MyHome.order(id: :desc)
   end
 
   def update
     my_home = MyHome.find(params[:id])
     my_home.update(my_home_params)
-    render json: my_home
+    redirect_to MyHome.order(id: :desc)
   end
 
   def destroy
     MyHome.find(params[:id]).destroy
-    redirect_to my_homes_path
+    redirect_to MyHome.order(id: :desc)
   end
 
   private
