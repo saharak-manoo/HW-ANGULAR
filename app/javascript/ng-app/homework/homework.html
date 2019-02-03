@@ -4,7 +4,7 @@
 <div class="container">
 <h1>MyUsers</h1>
 <br>
-<br>  
+<br>
 
 <a routerLink="/create" routerLinkActive="active">
     <button type="button" class="btn btn-success">Create</button>
@@ -35,16 +35,18 @@
       </td>
       <td>
         <a routerLink="/show" routerLinkActive="active">
-        <button type="button" class="btn btn-primary" (click)="find(myHome.id)" >Show</button>
+          <button type="button" class="btn btn-primary" (click)="find(myHome.id)">Show</button>
         </a>
       </td>
       <td>
-       <button type="button" class="btn btn-warning">Edit</button>
+       <button type="button" class="btn btn-warning" (click)="find(myHome.id)">Edit</button>
       </td>
       <td>
-        <button type="button" class="btn btn-danger" (click)="delete(myHome.id)">Delete</button>
+        <a routerLink="/homework" routerLinkActive="active">
+          <button type="button" class="btn btn-danger" (click)="delete(myHome.id)">Delete</button>
+        </a>
       </td>
-     
+
     </tr>
 
   </tbody>

@@ -1,44 +1,37 @@
 class MyHomesController < ApplicationController
-    load_and_authorize_resource
-    skip_before_action :verify_authenticity_token
-  
-    def destroy
-        MyHome.find(params[:id]).destroy
-        render json: MyHome.all
-    end
-    def update
-      MyHome.find(params[:id]).update(
-            name: params[:name],
-            sex: params[:sex],
-            age: params[:age],
-            address: params[:address],
-            skill: params[:skill],
-            likecode: params[:likecode],
-            dead: params[:dead]
-      )
-      render json: MyHome.all
-    end
+  load_and_authorize_resource
+  skip_before_action :verify_authenticity_token
 
-    def create
-        MyHome.create(create_params)
-      render json: MyHome.all
-    end
-  
-    #GET /my_homes
-    def index
-      my_homes = MyHome.all
-      render json: my_homes
-    end
-    
-    def show
-      MyHome.find(params[:id])
-      render json: MyHome.all
-    end  
-
-    private
-  
-    def create_params
-      params.require(:my_home).permit(:name,:sex,:age,:address,:skill,:likecode,:dead)
-    end
+  #GET /my_homes
+  def index
+    my_homes = MyHome.order(id: :desc)
+    render json: my_homes
   end
-  
+
+  def show
+    my_home = MyHome.find(params[:id])
+    render json: my_home
+  end
+
+  def create
+    MyHome.create(my_home_params)
+    redirect_to my_homes_path
+  end
+
+  def update
+    my_home = MyHome.find(params[:id])
+    my_home.update(my_home_params)
+    render json: my_home
+  end
+
+  def destroy
+    MyHome.find(params[:id]).destroy
+    redirect_to my_homes_path
+  end
+
+  private
+
+  def my_home_params
+    params.require(:my_home).permit(:name, :sex, :age, :address, :skill, :likecode, :dead)
+  end
+end

@@ -2,77 +2,65 @@
     crossorigin="anonymous">
 
 <div class="container">
-    <h2>ShowUser</h2>
-    <div class="row">
-        <div class="col-sm-5">
-            <img src="profile_pic.jpg" class="rounded">
-        </div>
-        <div class="col-sm-7">
-            <div class="form-group">
-                <div*ngFor="let myHome of myHomes">
-                <label for="usr">Name:</label>
-                {{myHome.name}}
-                </div>
-                <label for="sel1">Sex</label>
-                <select class="form-control" [(ngModel)]="newMyHome.sex">
-                    <option>Select Sex</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female
-                        <option>
-
-                </select>
-                <label for="sel1">Age</label>
-                <select class="form-control" [(ngModel)]="newMyHome.age">
-                    <option>Select Age</option>
-                    <option value="16">16</option>
-                    <option value="17">17
-                        <option>
-                            <option value="18">18
-                                <option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputlg">Address</label>
-                <input class="form-control input-lg" [(ngModel)]="newMyHome.address" type="text">
-            </div>
-            <div class="form-group">
-                <label for="inputlg">Skill</label>
-                <input class="form-control input-lg" [(ngModel)]="newMyHome.skill" type="text">
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" [(ngModel)]="newMyHome.likecode" value="Yes I like Code">Yes I like Code</label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" [(ngModel)]="newMyHome.likecode" value="No">No</label>
-            </div>
-            <div class="radio disabled">
-                <label>
-                    <input type="radio" [(ngModel)]="newMyHome.likecode" value="Yes No">Yes NO</label>
-            </div>
-
-            <div class="form-group">
-                <label for="inputlg">Dead ? </label>
-                <br>
-                <input type="checkbox" class="form-check-input lg" value="ture" [(ngModel)]="newMyHome.dead">
-            </div>
-
-
-        </div>
-        <br>
-        <br>
-        <br>
-
-        <div class="form-group">
-            <a routerLink="/homework" routerLinkActive="active">
-                <button type="button" class="btn btn-success" (click)="create(newMyHome)">Success</button>
-            </a>
-            <button type="button" class="btn btn-warning">Warning</button>
-        </div>
-
-
+  <h2>ShowUser</h2>
+  <div class="row">
+    <div class="col-sm-5">
+        <img src="profile_pic.jpg" class="rounded">
     </div>
+    <div class="col-sm-7">
+        <div class="form-group">
+          <div>
+            <label for="usr">Name:</label>
+              <input type="text" [(ngModel)]="myHomes.name">
+            </div>
+          <label for="sel1">Sex</label>
+          <select class="form-control" [(ngModel)]="myHomes.sex">
+            <option value="">Select Sex</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <label for="sel1">Age</label>
+          <select class="form-control" [(ngModel)]="myHomes.age">
+            <option value="">อายุ</option>
+            <option *ngFor="let age of ages" value="{{ age }}">{{ age }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputlg">Address</label>
+          <input class="form-control input-lg" [(ngModel)]="myHomes.address" type="text">
+        </div>
+        <div class="form-group">
+          <label for="inputlg">Skill</label>
+          <input class="form-control input-lg" [(ngModel)]="myHomes.skill" type="text">
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" [(ngModel)]="myHomes.likecode" value="Yes I like Code">Yes I like Code</label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" [(ngModel)]="myHomes.likecode" value="No">No</label>
+        </div>
+        <div class="radio disabled">
+          <label>
+            <input type="radio" [(ngModel)]="myHomes.likecode" value="Yes No">Yes NO</label>
+        </div>
+        <div class="form-group">
+          <label for="inputlg">Dead ? </label>
+          <br>
+          <input type="checkbox" class="form-check-input lg" value="ture" [(ngModel)]="myHomes.dead">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="form-group">
+      <a>
+        <button type="button" class="btn btn-success" (click)="update(myHomes)">Success</button>
+      </a>
+      <button type="button" class="btn btn-warning">Warning</button>
+    </div>
+  </div>
 </div>
 
 
