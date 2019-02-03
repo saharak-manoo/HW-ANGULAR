@@ -7,9 +7,9 @@ import { MyHome } from '../my_homework/my_home';
   template: templateString,
   providers: [ MyHomeService ]
 })
+
 export class HomeworkComponent {
   private myHomes: any;
-  private attrs: any
   private newMyHome: MyHome;
 
   constructor(private myHomeService: MyHomeService) { }
@@ -21,59 +21,38 @@ export class HomeworkComponent {
 
   getAll() {
     this.myHomeService.all().subscribe(resp => {
-      console.log(resp);
       this.myHomes = resp;
     }, e => {
       console.log(e);
     })
   }
-
-  // update(id, name, sex, age, address, skill, likecode, dead) {
-  //   this.attrs = {
-  //     name: name,
-  //     sex: sex,
-  //     age: age,
-  //     address: address,
-  //     skill: skill,
-  //     likecode: likecode,
-  //     dead: dead
-
-  //   }
-  //   this.myHomeService.update(id, this.attrs).subscribe(resp => {
-  //     console.log(resp);
-  //     this.myHomes = resp;
-  //   }, e => {
-  //     console.log(e);
-  //   })
-  // }
-
-  // create(newMyHome) {
-  //   console.log(newMyHome.getCreateParam())
-  //   this.myHomeService.create(newMyHome.getCreateParam()).subscribe(resp => {
-  //     console.log(resp);
-  //     this.myHomes = resp;
-  //     this.newMyHome = new MyHome();
-  //   }, e => {
-  //     console.log(e);
-  //   })
-  // }
 
   delete(id) {
     this.myHomeService.delete(id).subscribe(resp => {
-      console.log(resp);
+      console.log(resp)
       this.myHomes = resp;
     }, e => {
-      console.log(e);
+      this.getAll();
     })
   }
 
-  find(id) {
-    this.myHomeService.find(id).subscribe(resp => {
-      console.log(resp);
+  clickMethod(myHome) {
+    if(confirm("Are you sure to delete" + myHome.name)) {
+      this.delete(myHome.id)
+    }
+  }
+
+  search(search_key) {
+    this.myHomeService.search(search_key).subscribe(resp => {
       this.myHomes = resp;
     }, e => {
-      console.log(e);
+      this.getAll();
     })
+  }
+
+  onKey(event: any) {
+    this.search(event.target.value);
+    console.log(event.target.value);
   }
 
 }

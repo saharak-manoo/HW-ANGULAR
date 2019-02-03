@@ -10,29 +10,23 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="col-sm-6">
-                <label for="usr">Name:</label>
-                <input type="text" class="form-control" [(ngModel)]="newMyHome.name">
+                  <label for="usr">Name: {{ newMyHome.name }}</label>
+                  <br>
+                  <input type="text" [(ngModel)]="newMyHome.name">
                 </div>
                 <div class="col-sm-2">
                 <label for="sel1">Sex</label>
                 <select class="form-control" [(ngModel)]="newMyHome.sex">
-
-                    <option>Select Sex</option>
-                    <option  value="Male">Male</option>
-                    <option  value="Female">Female<option>
+                  <option>Select Sex</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
                 </select>
                 <label for="sel1">Age</label>
                 <select class="form-control" [(ngModel)]="newMyHome.age">
-                    <option>Select Age</option>
-                    <option value="16">16</option>
-                    <option value="17">17
-                        <option>
-                            <option value="18">18
-                                <option>
+                  <option>Select Age</option>
+                  <option *ngFor="let age of ages" value="{{ age }}">{{ age }}</option>
                 </select>
-                </div>
-               
-                
+              </div>
          </div>
             <div class="form-group col-sm-8">
                 <label for="exampleFormControlTextarea1">Address</label>
@@ -57,22 +51,17 @@
                 <label>
                     <input type="radio" [(ngModel)]="newMyHome.likecode" value="Yes No">Yes NO</label>
             </div>
-
                 <label>
                     <input type="checkbox" [(ngModel)]="newMyHome.dead" value="false">Dead ?</label>
-        
-           
-</div>
-
+            </div>
         </div>
-
     </div>
-        <div class="form-group" align="center">
-            <a routerLink="/homework" routerLinkActive="active">
-                <button type="button" class="btn btn-success col-sm-6" (click)="create(newMyHome)">Save</button>
-            </a>
-            <button type="button" class="btn btn-danger  col-sm-4">Back</button>
-        </div>
+    <div class="form-group" align="center">
+      <a routerLink="/homework" routerLinkActive="active">
+        <button type="button" class="btn btn-success col-sm-6" (click)="create(newMyHome)">Save</button>
+      </a>
+      <button type="button" class="btn btn-danger  col-sm-4">Back</button>
+    </div>
 </div>
 
 

@@ -26,4 +26,8 @@ export class RailsService {
   delete(id) {
     return this.http.delete('/' + this.resources + '/' + id);
   }
+
+  search(search_key) {
+    return this.http.get('/' + this.resources + '?search=' + search_key);
+  }
 }

@@ -8,38 +8,24 @@ import { MyHome } from '../my_homework/my_home';
     providers: [MyHomeService]
 })
 export class CreateComponent {
-    private myHomes: any;
-    private attrs: any
-    private newMyHome: MyHome;
+	private myHomes: any;
+	private attrs: any
+	private newMyHome: MyHome;
+	private ages;
 
-    constructor(private myHomeService: MyHomeService) { }
+	constructor(private myHomeService: MyHomeService) { }
 
-    ngOnInit() {
-        this.getAll();
-        this.newMyHome = new MyHome();
-    }
+	ngOnInit() {
+		this.ages = Array.from(new Array(100),(val, index) => index + 1);
+		this.newMyHome = new MyHome();
+	}
 
-    getAll() {
-        this.myHomeService.all().subscribe(resp => {
-            console.log(resp);
-            this.myHomes = resp;
-        }, e => {
-            console.log(e);
-        })
-    }
-
-
-    create(newMyHome) {
-        console.log(newMyHome.getCreateParam())
-        this.myHomeService.create(newMyHome.getCreateParam()).subscribe(resp => {
-            console.log(resp);
-            this.myHomes = resp;
-            this.newMyHome = new MyHome();
-        }, e => {
-            console.log(e);
-        })
-    }
-
- 
-
+	create(newMyHome) {
+		this.myHomeService.create(newMyHome.getCreateParam()).subscribe(resp => {
+			this.myHomes = resp;
+			this.newMyHome = new MyHome();
+		}, e => {
+				console.log(e);
+		})
+	}
 }
