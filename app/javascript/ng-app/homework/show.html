@@ -4,64 +4,73 @@
 <div class="container">
   <h2>ShowUser</h2>
   <div class="row">
-    <div class="col-sm-5 off-set-2">
+    <div class="col-sm-6">
         <img src="profile_pic.jpg" class="rounded">
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-6">
         <div class="form-group">
           <div>
             <label for="usr">Name: {{ myHomes.name }}</label>
             <br>
             <input type="text" [(ngModel)]="myHomes.name">
           </div>
-          <label for="sel1">Sex</label>
-          <select class="form-control" [(ngModel)]="myHomes.sex">
-            <option value="">Select Sex</option>
+        </div>
+        <div class="form-group">
+          <label>Sex Select</label>
+          <select class="browser-default" [(ngModel)]="myHomes.sex">
+            <option value="" disabled selected>Choose sex option</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
-          <label for="sel1">Age</label>
-          <select class="form-control" [(ngModel)]="myHomes.age">
-            <option value="">อายุ</option>
+        </div>
+        <div class="form-group">
+          <label>Age Select</label>
+          <select class="browser-default" [(ngModel)]="myHomes.age">
+            <option value="" disabled selected>Choose age option</option>
             <option *ngFor="let age of ages" value="{{ age }}">{{ age }}</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="inputlg">Address</label>
-          <input class="form-control input-lg" [(ngModel)]="myHomes.address" type="text">
+          <div>
+            <label for="usr">Address: {{ myHomes.address }}</label>
+            <br>
+            <input type="text" [(ngModel)]="myHomes.address">
+          </div>
         </div>
         <div class="form-group">
-          <label for="inputlg">Skill</label>
-          <input class="form-control input-lg" [(ngModel)]="myHomes.skill" type="text">
+          <div>
+            <label for="usr">Skill: {{ myHomes.skill }}</label>
+            <br>
+            <input type="text" [(ngModel)]="myHomes.skill">
+          </div>
         </div>
-        <div class="radio">
+        <div class="form-group col-sm-8">
+          <label for="exampleFormControlTextarea1">Do i love coding</label>
           <label>
-            <input type="radio" [(ngModel)]="myHomes.likecode" value="Yes I like Code">Yes I like Code</label>
-        </div>
-        <div class="radio">
+            <input class="with-gap" type="radio" [(ngModel)]="myHomes.likecode" value="Yes I like Code"/>
+            <span>Yes I like Code</span>
+          </label>
           <label>
-            <input type="radio" [(ngModel)]="myHomes.likecode" value="No">No</label>
+            <input class="with-gap" type="radio" [(ngModel)]="myHomes.likecode" value="No"/>
+            <span>No</span>
+          </label>
+          <div class="form-group">
+            <label>
+              <input id="indeterminate-checkbox" type="checkbox" [(ngModel)]="myHomes.dead" value="ture" />
+              <span>Dead ?</span>
+            </label>
+          </div>
         </div>
-        <div class="radio disabled">
-          <label>
-            <input type="radio" [(ngModel)]="myHomes.likecode" value="Yes No">Yes NO</label>
-        </div>
-        <div class="form-group">
-          <label for="inputlg">Dead ? </label>
-          <br>
-          <input type="checkbox" class="form-check-input lg" value="ture" [(ngModel)]="myHomes.dead">
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="form-group">
-      <a routerLink="/homework" routerLinkActive="active">
-        <button type="button" class="btn btn-success" (click)="update(myHomes)">Success</button>
-      </a>
-      <button type="button" class="btn btn-warning">Warning</button>
     </div>
   </div>
+  <div class="form-group">
+      <div class="form-group col-sm-12" align="center">
+        <button type="button" class="btn btn-success col-sm-6" (click)="update(myHomes)">Save</button>
+        <a routerLink="/homework" routerLinkActive="active">
+          <button type="button" class="btn btn-danger col-sm-4">Back</button>
+        </a>
+      </div>
+    </div>
 </div>
 
 

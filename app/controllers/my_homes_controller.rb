@@ -10,28 +10,28 @@ class MyHomesController < ApplicationController
     if params[:search].present?
       my_homes = my_homes.where("name LIKE :search OR sex LIKE :search OR address LIKE :search", search: "%#{params[:search]}%")
     end
-    render json: my_homes
+    render json: my_homes, status: 200
   end
 
   def show
     my_home = MyHome.find(params[:id])
-    render json: my_home
+    render json: my_home, status: 200
   end
 
   def create
     MyHome.create(my_home_params)
-    redirect_to MyHome.order(id: :desc)
+    redirect_to MyHome.order(id: :desc), status: 200
   end
 
   def update
     my_home = MyHome.find(params[:id])
     my_home.update(my_home_params)
-    redirect_to MyHome.order(id: :desc)
+    redirect_to my_home, status: 200
   end
 
   def destroy
     MyHome.find(params[:id]).destroy
-    redirect_to MyHome.order(id: :desc)
+    redirect_to MyHome.order(id: :desc), status: 200
   end
 
   private

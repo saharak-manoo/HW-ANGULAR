@@ -37,7 +37,6 @@ export class ShowComponent {
   find(id) {
     this.myHomeService.find(id).subscribe(resp => {
       this.myHomes = resp;
-      console.log(this.myHomes)
     }, e => {
       console.log(e);
     })
@@ -56,7 +55,7 @@ export class ShowComponent {
     this.myHomeService.update(my_homes.id, this.attrs).subscribe(resp => {
       this.myHomes = resp;
     }, e => {
-      this.getAll()
+      this.find(my_homes.id)
     })
   }
 }

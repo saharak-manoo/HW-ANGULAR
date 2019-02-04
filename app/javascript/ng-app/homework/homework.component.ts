@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import templateString from './homework.html';
 import { MyHomeService } from '../my_homework/my_home.service';
 import { MyHome } from '../my_homework/my_home';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   template: templateString,
@@ -10,6 +11,7 @@ import { MyHome } from '../my_homework/my_home';
 
 export class HomeworkComponent {
   private myHomes: any;
+  private attrs: any;
   private newMyHome: MyHome;
 
   constructor(private myHomeService: MyHomeService) { }
@@ -29,7 +31,6 @@ export class HomeworkComponent {
 
   delete(id) {
     this.myHomeService.delete(id).subscribe(resp => {
-      console.log(resp)
       this.myHomes = resp;
     }, e => {
       this.getAll();
@@ -52,7 +53,21 @@ export class HomeworkComponent {
 
   onKey(event: any) {
     this.search(event.target.value);
-    console.log(event.target.value);
+  }
+
+  update(id, value) {
+    this.attrs = {
+      address: value
+    }
+    this.myHomeService.update(id, this.attrs).subscribe(resp => {
+      this.myHomes = resp;
+    }, e => {
+      this.getAll()
+    })
+  }
+
+  addressChange(id, value) {
+    this.update(id, value)
   }
 
 }
