@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import templateString from './homework.html';
 import { MyHomeService } from '../my_homework/my_home.service';
 import { MyHome } from '../my_homework/my_home';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   template: templateString,
